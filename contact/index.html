@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYXNDGSQ21"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-KYXNDGSQ21');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us — SmartPath Guides</title>
+    <meta name="description" content="Get in touch with SmartPath Guides. Send us your questions, feedback, or report an error in our guides.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #FAFAF8; color: #1A1A1A; line-height: 1.6; }
+        .container { max-width: 600px; margin: 0 auto; padding: 0 24px; }
+        header { background: #fff; border-bottom: 1px solid rgba(0,0,0,0.08); padding: 20px 0; }
+        .logo { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 700; color: #1A1A1A; text-decoration: none; }
+        .logo span { color: #2563EB; }
+        .hero { padding: 60px 0 40px; }
+        h1 { font-family: 'Fraunces', serif; font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+        .lead { color: #555; }
+        .content { padding: 40px 0 80px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 500; font-size: 0.9rem; margin-bottom: 6px; }
+        input, select, textarea { width: 100%; padding: 10px 14px; border: 1px solid rgba(0,0,0,0.15); border-radius: 8px; font-size: 0.95rem; font-family: inherit; background: #fff; outline: none; transition: border-color 0.18s; }
+        input:focus, select:focus, textarea:focus { border-color: #2563EB; }
+        textarea { min-height: 140px; resize: vertical; }
+        button { background: #2563EB; color: white; border: none; padding: 12px 28px; border-radius: 8px; font-size: 0.95rem; font-weight: 600; cursor: pointer; width: 100%; }
+        button:hover { background: #1D4ED8; }
+        .success { display: none; background: #F0FDF4; border: 1px solid #86EFAC; border-radius: 8px; padding: 16px; color: #166534; margin-top: 16px; }
+        footer { background: #fff; border-top: 1px solid rgba(0,0,0,0.08); padding: 32px 0; text-align: center; }
+        footer p { color: #555; font-size: 0.8rem; }
+        footer a { color: #555; text-decoration: none; }
+        footer a:hover { color: #2563EB; }
+    </style>
+    <link rel="canonical" href="https://smartpathguides.com/contact/">
+</head>
+<body>
+    <header>
+        <div class="container" style="max-width:1200px">
+            <a href="/" class="logo">Smart<span>Path</span> Guides</a>
+        </div>
+    </header>
+    <section class="hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+            <p class="lead">Have a question, feedback, or spotted an error? We'd love to hear from you.</p>
+        </div>
+    </section>
+    <div class="content">
+        <div class="container">
+            <form id="contactForm" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Jane Smith" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" placeholder="jane@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <select id="subject">
+                        <option>General Question</option>
+                        <option>Report an Error</option>
+                        <option>Content Suggestion</option>
+                        <option>Advertising Inquiry</option>
+                        <option>Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" placeholder="Your message here..." required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="success" id="successMsg">
+                ✓ Thank you! Your message has been sent. We'll get back to you within 2 business days.
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container" style="max-width:1200px">
+            <p>&copy; 2026 SmartPath Guides. <a href="/privacy/">Privacy Policy</a> · <a href="/terms/">Terms</a> · <a href="/">Home</a></p>
+        </div>
+    </footer>
+    <script>
+    function handleSubmit(e) {
+        e.preventDefault();
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+    }
+    </script>
+</body>
+</html>
