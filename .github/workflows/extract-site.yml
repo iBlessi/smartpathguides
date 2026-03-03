@@ -1,0 +1,24 @@
+name: Extract Site Content
+on:
+  push:
+    paths:
+      - '_site_archive.b64'
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract site content
+        run: |
+          base64 -d _site_archive.b64 > site.tar.gz
+          tar xzf site.tar.gz --overwrite
+          rm -f _site_archive.b64 site.tar.gz
+      - name: Commit extracted files
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "Extract all site content from archive" || echo "No changes"
+          git push
