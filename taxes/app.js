@@ -778,7 +778,7 @@ function renderDT(nodeKey) {
     <div class="dt-progress">${dots}</div>
     <div class="dt-question">${node.question}</div>
     <div class="dt-options">${opts}</div>
-    ${dtHistory.length > 0 ? '<div style="text-align:center;margin-top:16px;"><button class="dt-restart" style="background:var(--gray-400);" onclick="dtBack()">\u2190 Back</button></div>' : ''}
+    ${dtHistory.length > 0 ? '<div style="text-align:center;margin-top:16px;"><button class="dt-restart" style="background:var(--gray-400);" onclick="dtBack()">← Back</button></div>' : ''}
   `;
 }
 
