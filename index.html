@@ -13,528 +13,730 @@
      crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartPath Guides — Expert Guides for Smarter Decisions</title>
-    <meta name="description" content="Free expert guides on insurance, finance, legal rights, real estate, health, technology, and more. Make smarter decisions with SmartPath Guides.">
-    <meta name="keywords" content="insurance guide, finance calculator, legal rights, real estate investing, credit cards, tax preparation, cybersecurity, fitness, pet care, crypto, car buying, wedding planning, remote work, senior health, home improvement, AI tools">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        :root {
-            --bg: #FAFAF8;
-            --surface: #FFFFFF;
-            --text: #1A1A1A;
-            --text-secondary: #555555;
-            --accent: #2563EB;
-            --accent-hover: #1D4ED8;
-            --border: rgba(0,0,0,0.08);
-            --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-            --shadow-hover: 0 10px 30px rgba(0,0,0,0.08), 0 4px 12px rgba(0,0,0,0.04);
-            --radius: 12px;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* Header */
-        header {
-            background: var(--surface);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .logo span { color: var(--accent); }
-
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-left: 24px;
-            transition: color 0.18s ease;
-        }
-
-        nav a:hover { color: var(--accent); }
-
-        /* Hero */
-        .hero {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-family: 'Fraunces', serif;
-            font-size: clamp(2rem, 5vw, 3.25rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin-bottom: 16px;
-            color: var(--text);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2vw, 1.2rem);
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 48px;
-            margin-bottom: 20px;
-        }
-
-        .stat { text-align: center; }
-
-        .stat-number {
-            font-family: 'Fraunces', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-top: 4px;
-        }
-
-        /* Ad slot */
-        .ad-slot {
-            min-height: 90px;
-            background: #f0f0ee;
-            border: 1px dashed #ccc;
-            padding: 16px;
-            text-align: center;
-            color: #999;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin: 40px auto;
-            max-width: 728px;
-            border-radius: 8px;
-        }
-
-        /* Categories */
-        .categories {
-            padding: 40px 0 80px;
-        }
-
-        .section-title {
-            font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            margin-bottom: 32px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            text-decoration: none;
-            color: inherit;
-            transition: box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1), transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .card:hover {
-            box-shadow: var(--shadow-hover);
-            transform: translateY(-2px);
-        }
-
-        .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
-
-        .card h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .card p {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .card-arrow {
-            margin-top: auto;
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .card-arrow span {
-            transition: transform 0.18s ease;
-        }
-
-        .card:hover .card-arrow span {
-            transform: translateX(4px);
-        }
-
-        /* Color variations for card icons */
-        .bg-blue { background: #EFF6FF; }
-        .bg-green { background: #F0FDF4; }
-        .bg-amber { background: #FFFBEB; }
-        .bg-red { background: #FEF2F2; }
-        .bg-purple { background: #F5F3FF; }
-        .bg-teal { background: #F0FDFA; }
-        .bg-pink { background: #FDF2F8; }
-        .bg-orange { background: #FFF7ED; }
-        .bg-slate { background: #F8FAFC; }
-        .bg-emerald { background: #ECFDF5; }
-        .bg-indigo { background: #EEF2FF; }
-        .bg-rose { background: #FFF1F2; }
-        .bg-cyan { background: #ECFEFF; }
-        .bg-lime { background: #F7FEE7; }
-        .bg-yellow { background: #FEFCE8; }
-        .bg-violet { background: #F5F3FF; }
-
-        /* Footer */
-        footer {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        footer p {
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-
-        footer a {
-            color: var(--text-secondary);
-            text-decoration: none;
-        }
-
-        footer a:hover { color: var(--accent); }
-
-        /* Responsive */
-        @media (max-width: 640px) {
-            .stats { gap: 24px; }
-            .stat-number { font-size: 1.5rem; }
-            nav { display: none; }
-            .grid { grid-template-columns: 1fr; }
-        }
-    
-        /* CSS hover states (replacing inline JS handlers) */
-        .guide-link:hover, .city-grid a:hover {
-            background: var(--accent, #2563EB) !important;
-            color: white !important;
-            border-color: var(--accent, #2563EB) !important;
-        }
-    </style>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "SmartPath Guides",
-  "url": "https://smartpathguides.com",
-  "description": "Free expert guides across finance, legal, health, technology, and more. Helping you navigate life's biggest decisions.",
-  "foundingDate": "2026",
-  "sameAs": []
-}
-</script>
-    <link rel="canonical" href="https://smartpathguides.com/">
+    <meta name="google-site-verification" content="3fIBnGFp41p0yFd5lxiWBIIBcPJmMEY2hJ5-LDW6Y0s" />
+    <title>SmartPath Guides – Expert Financial Guides for Smart Decisions</title>
+    <meta name="description" content="SmartPath Guides provides independent, expert-reviewed guides on credit cards, crypto, and personal finance to help you make smarter financial decisions.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.smartpathguides.com/">
+    <meta property="og:title" content="SmartPath Guides – Expert Financial Guides">
+    <meta property="og:description" content="Independent guides for credit cards, crypto, and personal finance.">
+    <meta property="og:url" content="https://www.smartpathguides.com/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="SmartPath Guides">
-    <meta property="og:title" content="SmartPath Guides — Expert Guides for Smarter Decisions">
-    <meta property="og:description" content="Free expert guides on insurance, finance, legal rights, real estate, health, technology, and more.">
-    <meta property="og:url" content="https://smartpathguides.com/">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="SmartPath Guides — Expert Guides for Smarter Decisions">
-    <meta name="twitter:description" content="Free expert guides on insurance, finance, legal rights, real estate, health, technology, and more.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SmartPath Guides",
+      "url": "https://www.smartpathguides.com",
+      "description": "Independent financial guides for credit cards, crypto, and personal finance.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.smartpathguides.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { font-size: 16px; scroll-behavior: smooth; }
+      body {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background: #F8FAFC;
+        color: #1E293B;
+        line-height: 1.6;
+      }
+      a { color: #2563EB; text-decoration: none; }
+      a:hover { text-decoration: underline; }
+      img { max-width: 100%; height: auto; display: block; }
+      .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+
+      /* Header */
+      header {
+        background: #fff;
+        border-bottom: 1px solid #E2E8F0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      }
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 64px;
+      }
+      .logo {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #1E293B;
+        text-decoration: none;
+      }
+      .logo span { color: #2563EB; }
+      nav { display: flex; gap: 1.5rem; align-items: center; }
+      nav a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #475569;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      nav a:hover { color: #2563EB; }
+      .nav-cta {
+        background: #2563EB;
+        color: #fff !important;
+        padding: 0.4rem 1rem;
+        border-radius: 6px;
+        transition: background 0.2s !important;
+      }
+      .nav-cta:hover { background: #1D4ED8 !important; }
+
+      /* Mobile Nav */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        padding: 4px;
+      }
+      .hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #475569;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+      .mobile-nav {
+        display: none;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #fff;
+        border-bottom: 1px solid #E2E8F0;
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 0.75rem;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+      }
+      .mobile-nav.open { display: flex; }
+      .mobile-nav a {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #475569;
+        padding: 0.4rem 0;
+        border-bottom: 1px solid #F1F5F9;
+      }
+      .mobile-nav a:last-child { border-bottom: none; }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(135deg, #1E3A5F 0%, #2563EB 100%);
+        color: #fff;
+        padding: 5rem 0 4rem;
+        text-align: center;
+      }
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255,255,255,0.15);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 20px;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 1.25rem;
+      }
+      .hero p {
+        font-size: 1.15rem;
+        opacity: 0.9;
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+      }
+      .hero-ctas {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        background: #fff;
+        color: #2563EB;
+        padding: 0.85rem 2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: all 0.2s;
+        display: inline-block;
+      }
+      .btn-primary:hover { background: #F1F5F9; text-decoration: none; }
+      .btn-secondary {
+        background: rgba(255,255,255,0.15);
+        color: #fff;
+        padding: 0.85rem 2rem;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 1rem;
+        border: 2px solid rgba(255,255,255,0.4);
+        text-decoration: none;
+        transition: all 0.2s;
+        display: inline-block;
+      }
+      .btn-secondary:hover { background: rgba(255,255,255,0.25); text-decoration: none; color: #fff; }
+
+      /* Trust bar */
+      .trust-bar {
+        background: #fff;
+        border-bottom: 1px solid #E2E8F0;
+        padding: 1rem 0;
+      }
+      .trust-items {
+        display: flex;
+        justify-content: center;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: #64748B;
+        font-weight: 500;
+      }
+      .trust-item .trust-icon { font-size: 1.1rem; }
+
+      /* Section layout */
+      .section-header { text-align: center; margin-bottom: 3rem; }
+      .section-header h2 {
+        font-size: clamp(1.5rem, 3vw, 2.25rem);
+        font-weight: 800;
+        color: #1E293B;
+        margin-bottom: 0.75rem;
+      }
+      .section-header p { color: #64748B; font-size: 1rem; max-width: 600px; margin: 0 auto; }
+      .section-tag {
+        display: inline-block;
+        background: #EFF6FF;
+        color: #2563EB;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        margin-bottom: 0.75rem;
+      }
+
+      /* Category cards */
+      .categories-section { padding: 5rem 0; }
+      .categories-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .cat-card {
+        background: #fff;
+        border: 1px solid #E2E8F0;
+        border-radius: 16px;
+        padding: 2rem 1.75rem;
+        text-decoration: none;
+        display: block;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s;
+      }
+      .cat-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        background: var(--accent, #2563EB);
+      }
+      .cat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+        border-color: var(--accent, #2563EB);
+        text-decoration: none;
+      }
+      .cat-icon {
+        width: 52px; height: 52px;
+        border-radius: 14px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.75rem;
+        margin-bottom: 1.25rem;
+        background: var(--icon-bg, #EFF6FF);
+      }
+      .cat-card h3 { font-size: 1.1rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem; }
+      .cat-card p { font-size: 0.875rem; color: #64748B; line-height: 1.6; margin-bottom: 1.25rem; }
+      .cat-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .cat-tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--accent, #2563EB);
+        background: var(--tag-bg, #EFF6FF);
+        padding: 0.2rem 0.6rem;
+        border-radius: 10px;
+      }
+      .cat-arrow { color: var(--accent, #2563EB); font-size: 1.1rem; transition: transform 0.2s; }
+      .cat-card:hover .cat-arrow { transform: translateX(4px); }
+
+      /* Featured picks */
+      .picks-section { padding: 5rem 0; background: #fff; }
+      .picks-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+      .pick-card {
+        border: 1px solid #E2E8F0;
+        border-radius: 14px;
+        padding: 1.5rem;
+        background: #fff;
+        transition: all 0.2s;
+      }
+      .pick-card:hover { border-color: #2563EB; box-shadow: 0 4px 16px rgba(37,99,235,0.1); }
+      .pick-card.featured { border-color: #2563EB; background: #EFF6FF; }
+      .pick-header { display: flex; align-items: flex-start; gap: 0.75rem; margin-bottom: 0.75rem; }
+      .pick-rank {
+        width: 34px; height: 34px;
+        border-radius: 8px;
+        background: #1E3A5F;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        flex-shrink: 0;
+      }
+      .pick-card.featured .pick-rank { background: #2563EB; }
+      .pick-name { font-size: 1rem; font-weight: 700; color: #1E293B; margin-bottom: 0.2rem; }
+      .pick-category { font-size: 0.75rem; color: #64748B; }
+      .pick-bonus {
+        background: #F0FDF4;
+        border: 1px solid #BBF7D0;
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #166534;
+        margin-bottom: 0.75rem;
+      }
+      .pick-card.featured .pick-bonus { background: #DBEAFE; border-color: #93C5FD; color: #1D4ED8; }
+      .pick-cta {
+        display: block;
+        text-align: center;
+        background: #2563EB;
+        color: #fff;
+        padding: 0.6rem;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background 0.2s;
+      }
+      .pick-cta:hover { background: #1D4ED8; text-decoration: none; color: #fff; }
+
+      /* Stats bar */
+      .stats-section { padding: 4rem 0; background: #1E3A5F; color: #fff; }
+      .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; text-align: center; }
+      .stat-number { font-size: 2.5rem; font-weight: 800; color: #fff; display: block; }
+      .stat-label { font-size: 0.875rem; color: rgba(255,255,255,0.7); margin-top: 0.25rem; }
+
+      /* How it works */
+      .how-section { padding: 5rem 0; }
+      .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+      .step-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #E2E8F0;
+      }
+      .step-number {
+        width: 48px; height: 48px;
+        border-radius: 50%;
+        background: #EFF6FF;
+        color: #2563EB;
+        font-size: 1.25rem;
+        font-weight: 800;
+        display: flex; align-items: center; justify-content: center;
+        margin: 0 auto 1rem;
+      }
+      .step-card h3 { font-size: 1rem; font-weight: 700; color: #1E293B; margin-bottom: 0.5rem; }
+      .step-card p { font-size: 0.875rem; color: #64748B; line-height: 1.6; }
+
+      /* Crypto teaser */
+      .crypto-section { padding: 5rem 0; background: #fff; }
+      .crypto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
+      .crypto-card {
+        background: #F8FAFC;
+        border: 1px solid #E2E8F0;
+        border-radius: 12px;
+        padding: 1.25rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        transition: all 0.2s;
+      }
+      .crypto-card:hover { border-color: #2563EB; background: #EFF6FF; text-decoration: none; }
+      .crypto-icon { font-size: 2rem; flex-shrink: 0; }
+      .crypto-card h4 { font-size: 0.9rem; font-weight: 700; color: #1E293B; margin-bottom: 0.2rem; }
+      .crypto-card p { font-size: 0.8rem; color: #64748B; }
+
+      /* Disclaimer */
+      .disclaimer { padding: 2rem 0; background: #F8FAFC; border-top: 1px solid #E2E8F0; }
+      .disclaimer p { font-size: 0.8rem; color: #94A3B8; text-align: center; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+      /* Footer */
+      footer { background: #1E293B; color: #fff; padding: 3rem 0 1.5rem; }
+      .footer-grid { display: grid; grid-template-columns: 2fr repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+      .footer-brand p { font-size: 0.85rem; color: #94A3B8; line-height: 1.6; margin-top: 0.75rem; }
+      .footer-col h4 {
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #94A3B8;
+        margin-bottom: 1rem;
+      }
+      .footer-col ul { list-style: none; }
+      .footer-col ul li { margin-bottom: 0.5rem; }
+      .footer-col ul li a { font-size: 0.85rem; color: #CBD5E1; text-decoration: none; transition: color 0.2s; }
+      .footer-col ul li a:hover { color: #fff; }
+      .footer-bottom {
+        border-top: 1px solid #334155;
+        padding-top: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .footer-bottom p { font-size: 0.8rem; color: #64748B; }
+      .footer-links { display: flex; gap: 1.5rem; }
+      .footer-links a { font-size: 0.8rem; color: #64748B; text-decoration: none; }
+      .footer-links a:hover { color: #fff; }
+
+      /* Responsive */
+      @media (max-width: 1024px) {
+        .categories-grid { grid-template-columns: repeat(2, 1fr); }
+        .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      @media (max-width: 768px) {
+        .hamburger { display: flex; }
+        nav { display: none; }
+        .hero { padding: 3.5rem 0 3rem; }
+        .categories-grid { grid-template-columns: 1fr; }
+        .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .steps-grid { grid-template-columns: 1fr; }
+        .footer-grid { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-inner">
-                <a href="/" class="logo">Smart<span>Path</span> Guides</a>
-                <nav>
-                    <a href="#money">Money</a>
-                    <a href="#lifestyle">Lifestyle</a>
-                    <a href="#tech">Technology</a>
-                    <a href="#home">Home & Auto</a>
-                    <a href="#cities">Cities</a>
-                </nav>
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">SmartPath<span>Guides</span></a>
+      <nav>
+        <a href="/credit-cards/">Credit Cards</a>
+        <a href="/crypto/">Crypto</a>
+        <a href="/finance/">Finance</a>
+        <a href="/credit-cards/" class="nav-cta">Top Picks</a>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/credit-cards/">Credit Cards</a>
+    <a href="/crypto/">Crypto</a>
+    <a href="/finance/">Finance</a>
+    <a href="/credit-cards/best-cash-back/">Best Cash Back</a>
+    <a href="/credit-cards/best-travel-rewards/">Best Travel</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge">💰 Trusted Financial Guides Since 2024</div>
+      <h1>Make Smarter<br>Financial Decisions</h1>
+      <p>Independent, expert-reviewed guides for credit cards, crypto, and personal finance — no fluff, no bias.</p>
+      <div class="hero-ctas">
+        <a href="/credit-cards/" class="btn-primary">Browse Credit Cards</a>
+        <a href="/crypto/" class="btn-secondary">Explore Crypto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust bar -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-items">
+        <div class="trust-item"><span class="trust-icon">✅</span> Independent Reviews</div>
+        <div class="trust-item"><span class="trust-icon">🔄</span> Updated Regularly</div>
+        <div class="trust-item"><span class="trust-icon">📊</span> Data-Driven Picks</div>
+        <div class="trust-item"><span class="trust-icon">🔒</span> No Paid Rankings</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Explore Topics</span>
+        <h2>What Are You Looking For?</h2>
+        <p>Choose a category to find expert guides, top picks, and comparison tools.</p>
+      </div>
+      <div class="categories-grid">
+        <a href="/credit-cards/best-cash-back/" class="cat-card" style="--accent:#16A34A;--icon-bg:#F0FDF4;--tag-bg:#DCFCE7">
+          <div class="cat-icon">💵</div>
+          <h3>Best Cash Back Cards</h3>
+          <p>Earn money back on groceries, gas, dining, and everyday purchases.</p>
+          <div class="cat-meta"><span class="cat-tag">Cash Back</span><span class="cat-arrow">→</span></div>
+        </a>
+        <a href="/credit-cards/best-travel-rewards/" class="cat-card" style="--accent:#7C3AED;--icon-bg:#F5F3FF;--tag-bg:#EDE9FE">
+          <div class="cat-icon">✈️</div>
+          <h3>Best Travel Rewards Cards</h3>
+          <p>Turn spending into free flights, hotel stays, and travel perks.</p>
+          <div class="cat-meta"><span class="cat-tag">Travel</span><span class="cat-arrow">→</span></div>
+        </a>
+        <a href="/credit-cards/best-balance-transfer/" class="cat-card" style="--accent:#0891B2;--icon-bg:#ECFEFF;--tag-bg:#CFFAFE">
+          <div class="cat-icon">⚖️</div>
+          <h3>Balance Transfer Cards</h3>
+          <p>Move high-interest debt to 0% APR and pay it off faster.</p>
+          <div class="cat-meta"><span class="cat-tag">Balance Transfer</span><span class="cat-arrow">→</span></div>
+        </a>
+        <a href="/crypto/best-crypto-exchanges/" class="cat-card" style="--accent:#F59E0B;--icon-bg:#FFFBEB;--tag-bg:#FEF3C7">
+          <div class="cat-icon">₿</div>
+          <h3>Best Crypto Exchanges</h3>
+          <p>Compare top platforms for buying, selling, and trading cryptocurrency.</p>
+          <div class="cat-meta"><span class="cat-tag">Crypto</span><span class="cat-arrow">→</span></div>
+        </a>
+        <a href="/finance/best-savings-accounts/" class="cat-card" style="--accent:#0891B2;--icon-bg:#ECFEFF;--tag-bg:#CFFAFE">
+          <div class="cat-icon">🏦</div>
+          <h3>Best Savings Accounts</h3>
+          <p>Find high-yield savings accounts to grow your money faster.</p>
+          <div class="cat-meta"><span class="cat-tag">Finance</span><span class="cat-arrow">→</span></div>
+        </a>
+        <a href="/credit-cards/best-for-building-credit/" class="cat-card" style="--accent:#DC2626;--icon-bg:#FEF2F2;--tag-bg:#FEE2E2">
+          <div class="cat-icon">📈</div>
+          <h3>Cards for Building Credit</h3>
+          <p>Secured and starter cards to build or rebuild your credit score.</p>
+          <div class="cat-meta"><span class="cat-tag">Build Credit</span><span class="cat-arrow">→</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div><span class="stat-number">100+</span><div class="stat-label">Products Reviewed</div></div>
+        <div><span class="stat-number">6</span><div class="stat-label">Coverage Categories</div></div>
+        <div><span class="stat-number">2026</span><div class="stat-label">Continuously Updated</div></div>
+        <div><span class="stat-number">100%</span><div class="stat-label">Independent & Unbiased</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Picks -->
+  <section class="picks-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Editor's Picks</span>
+        <h2>Top Financial Products Right Now</h2>
+        <p>Our analysts review hundreds of products to surface the best options across every category.</p>
+      </div>
+      <div class="picks-grid">
+        <div class="pick-card featured">
+          <div class="pick-header">
+            <div class="pick-rank">#1</div>
+            <div>
+              <div class="pick-name">Chase Sapphire Preferred®</div>
+              <div class="pick-category">Best Overall Travel Card</div>
             </div>
+          </div>
+          <div class="pick-bonus">60,000 bonus points after $4,000 spend in 3 months</div>
+          <a href="/credit-cards/best-travel-rewards/" class="pick-cta">See Full Review →</a>
         </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Expert Guides for<br>Smarter Decisions</h1>
-            <p>Free, in-depth guides across finance, legal, health, technology, and more. Written by experts to help you navigate life's biggest decisions.</p>
-            <div class="stats">
-                <div class="stat">
-                    <div class="stat-number">16</div>
-                    <div class="stat-label">Expert Guides</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">350+</div>
-                    <div class="stat-label">City Guides</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Free Access</div>
-                </div>
+        <div class="pick-card">
+          <div class="pick-header">
+            <div class="pick-rank">#2</div>
+            <div>
+              <div class="pick-name">Wells Fargo Active Cash®</div>
+              <div class="pick-category">Best Flat-Rate Cash Back</div>
             </div>
+          </div>
+          <div class="pick-bonus">2% unlimited cash rewards on every purchase</div>
+          <a href="/credit-cards/best-cash-back/" class="pick-cta">See Full Review →</a>
         </div>
-    </section>
-
-    <div class="ad-slot">Advertisement</div>
-
-    <section class="categories" id="money">
-        <div class="container">
-            <h2 class="section-title">Money & Finance</h2>
-            <p class="section-subtitle">Take control of your financial future with expert guidance.</p>
-            <div class="grid">
-                <a href="/insurance/index.html" class="card">
-                    <div class="card-icon bg-blue">🛡️</div>
-                    <h3>Insurance Guide</h3>
-                    <p>Compare auto, home, life, and health insurance. Understand coverage types, save on premiums, and find the right policy.</p>
-                    <div class="card-arrow">Read Guide <span>→</span></div>
-                </a>
-                <a href="/finance/index.html" class="card">
-                    <div class="card-icon bg-green">📊</div>
-                    <h3>Finance Calculators</h3>
-                    <p>Budget planners, compound interest calculators, retirement projections, and more interactive financial tools.</p>
-                    <div class="card-arrow">Use Tools <span>→</span></div>
-                </a>
-                <a href="/credit-cards/index.html" class="card">
-                    <div class="card-icon bg-amber">💳</div>
-                    <h3>Credit Card Comparison</h3>
-                    <p>Find the best rewards, cashback, travel, and balance transfer cards. Side-by-side comparisons and expert picks.</p>
-                    <div class="card-arrow">Compare Cards <span>→</span></div>
-                </a>
-                <a href="/taxes/index.html" class="card">
-                    <div class="card-icon bg-red">📋</div>
-                    <h3>Tax Preparation</h3>
-                    <p>Step-by-step tax filing guides, deduction checklists, and strategies to maximize your refund legally.</p>
-                    <div class="card-arrow">Read Guide <span>→</span></div>
-                </a>
-                <a href="/real-estate/index.html" class="card">
-                    <div class="card-icon bg-purple">🏠</div>
-                    <h3>Real Estate Investing</h3>
-                    <p>First-time buyer tips, investment property analysis, mortgage comparisons, and market insights.</p>
-                    <div class="card-arrow">Explore <span>→</span></div>
-                </a>
-                <a href="/crypto/index.html" class="card">
-                    <div class="card-icon bg-teal">₿</div>
-                    <h3>Crypto Education</h3>
-                    <p>Learn blockchain basics, compare exchanges, understand DeFi, and make informed crypto decisions.</p>
-                    <div class="card-arrow">Start Learning <span>→</span></div>
-                </a>
+        <div class="pick-card">
+          <div class="pick-header">
+            <div class="pick-rank">#3</div>
+            <div>
+              <div class="pick-name">Coinbase</div>
+              <div class="pick-category">Best Crypto Exchange for Beginners</div>
             </div>
+          </div>
+          <div class="pick-bonus">Most trusted U.S. exchange — easy to use, insured</div>
+          <a href="/crypto/best-crypto-exchanges/" class="pick-cta">See Full Review →</a>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div class="ad-slot">Advertisement</div>
-
-    <section class="categories" id="lifestyle">
-        <div class="container">
-            <h2 class="section-title">Health & Lifestyle</h2>
-            <p class="section-subtitle">Live better with guides backed by research and expert advice.</p>
-            <div class="grid">
-                <a href="/fitness/index.html" class="card">
-                    <div class="card-icon bg-lime">💪</div>
-                    <h3>Fitness & Weight Loss</h3>
-                    <p>Workout plans, nutrition guides, calorie calculators, and science-backed strategies for lasting results.</p>
-                    <div class="card-arrow">Get Fit <span>→</span></div>
-                </a>
-                <a href="/senior-health/index.html" class="card">
-                    <div class="card-icon bg-pink">🧓</div>
-                    <h3>Senior Wellness</h3>
-                    <p>Health management, Medicare guides, wellness programs, and resources for healthy aging.</p>
-                    <div class="card-arrow">Read Guide <span>→</span></div>
-                </a>
-                <a href="/pets/index.html" class="card">
-                    <div class="card-icon bg-orange">🐾</div>
-                    <h3>Pet Care</h3>
-                    <p>Nutrition, health, training, and product reviews for dogs, cats, and other pets.</p>
-                    <div class="card-arrow">Care for Pets <span>→</span></div>
-                </a>
-                <a href="/wedding/index.html" class="card">
-                    <div class="card-icon bg-rose">💒</div>
-                    <h3>Wedding Planning</h3>
-                    <p>Budget planners, vendor checklists, timeline templates, and inspiration for your perfect day.</p>
-                    <div class="card-arrow">Plan Wedding <span>→</span></div>
-                </a>
-                <a href="/legal/index.html" class="card">
-                    <div class="card-icon bg-slate">⚖️</div>
-                    <h3>Legal Rights</h3>
-                    <p>Know your rights as a tenant, employee, consumer, and citizen. Plain-English legal guides.</p>
-                    <div class="card-arrow">Know Your Rights <span>→</span></div>
-                </a>
-            </div>
+  <!-- How it works -->
+  <section class="how-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Process</span>
+        <h2>How SmartPath Guides Works</h2>
+        <p>Every recommendation is backed by independent research, not advertiser influence.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>We Research</h3>
+          <p>Our team reviews dozens of products per category — comparing rates, fees, benefits, and fine print.</p>
         </div>
-    </section>
-
-    <div class="ad-slot">Advertisement</div>
-
-    <section class="categories" id="tech">
-        <div class="container">
-            <h2 class="section-title">Technology & Work</h2>
-            <p class="section-subtitle">Stay ahead with guides on the latest tools and trends.</p>
-            <div class="grid">
-                <a href="/ai-tools/index.html" class="card">
-                    <div class="card-icon bg-indigo">🤖</div>
-                    <h3>AI Tools Hub</h3>
-                    <p>Discover and compare the best AI tools for writing, design, coding, and productivity.</p>
-                    <div class="card-arrow">Explore AI <span>→</span></div>
-                </a>
-                <a href="/cybersecurity/index.html" class="card">
-                    <div class="card-icon bg-emerald">🔒</div>
-                    <h3>Cybersecurity Guide</h3>
-                    <p>Protect yourself and your business from cyber threats. Password managers, VPNs, and security best practices.</p>
-                    <div class="card-arrow">Stay Safe <span>→</span></div>
-                </a>
-                <a href="/remote-work/index.html" class="card">
-                    <div class="card-icon bg-cyan">💻</div>
-                    <h3>Remote Work Tools</h3>
-                    <p>Best tools and strategies for productive remote work. Software reviews, setup guides, and tips.</p>
-                    <div class="card-arrow">Work Smarter <span>→</span></div>
-                </a>
-            </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>We Rank</h3>
+          <p>Products are scored on value, ease of use, terms, and real-world usefulness — never paid placement.</p>
         </div>
-    </section>
-
-    <div class="ad-slot">Advertisement</div>
-
-    <section class="categories" id="home">
-        <div class="container">
-            <h2 class="section-title">Home & Auto</h2>
-            <p class="section-subtitle">Make informed decisions for your home and vehicles.</p>
-            <div class="grid">
-                <a href="/home-improvement/index.html" class="card">
-                    <div class="card-icon bg-yellow">🔨</div>
-                    <h3>Home Improvement & DIY</h3>
-                    <p>Step-by-step project guides, tool reviews, cost estimates, and contractor hiring tips.</p>
-                    <div class="card-arrow">Start Projects <span>→</span></div>
-                </a>
-                <a href="/cars/index.html" class="card">
-                    <div class="card-icon bg-violet">🚗</div>
-                    <h3>Car Buying Guide</h3>
-                    <p>New vs. used comparisons, negotiation strategies, financing options, and maintenance schedules.</p>
-                    <div class="card-arrow">Find Your Car <span>→</span></div>
-                </a>
-            </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>We Update</h3>
+          <p>Guides are reviewed regularly to reflect current offers, rate changes, and new products on the market.</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <div class="ad-slot">Advertisement</div>
+  <!-- Crypto teaser -->
+  <section class="crypto-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Crypto Guides</span>
+        <h2>Navigating the Crypto Space</h2>
+        <p>From choosing an exchange to understanding DeFi, we break it down simply.</p>
+      </div>
+      <div class="crypto-grid">
+        <a href="/crypto/best-crypto-exchanges/" class="crypto-card">
+          <span class="crypto-icon">🏦</span>
+          <div>
+            <h4>Best Crypto Exchanges</h4>
+            <p>Compare Coinbase, Kraken, Binance, and more</p>
+          </div>
+        </a>
+        <a href="/crypto/" class="crypto-card">
+          <span class="crypto-icon">₿</span>
+          <div>
+            <h4>Bitcoin Buying Guide</h4>
+            <p>How to buy BTC safely in 2026</p>
+          </div>
+        </a>
+        <a href="/crypto/" class="crypto-card">
+          <span class="crypto-icon">🔐</span>
+          <div>
+            <h4>Crypto Security Tips</h4>
+            <p>How to protect your digital assets</p>
+          </div>
+        </a>
+        <a href="/crypto/" class="crypto-card">
+          <span class="crypto-icon">📊</span>
+          <div>
+            <h4>DeFi Explained</h4>
+            <p>A beginner's guide to decentralized finance</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <section class="categories" id="cities">
-        <div class="container">
-            <h2 class="section-title">City-Specific Guides</h2>
-            <p class="section-subtitle">Tailored information for the top 50 US cities across insurance, legal, taxes, real estate, cars, wedding, and cybersecurity.</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
-                <a href="/insurance/new-york/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">New York</a>
-                <a href="/insurance/los-angeles/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Los Angeles</a>
-                <a href="/insurance/chicago/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Chicago</a>
-                <a href="/insurance/houston/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Houston</a>
-                <a href="/insurance/phoenix/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Phoenix</a>
-                <a href="/insurance/dallas/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Dallas</a>
-                <a href="/insurance/san-francisco/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">San Francisco</a>
-                <a href="/insurance/seattle/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Seattle</a>
-                <a href="/insurance/miami/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Miami</a>
-                <a href="/insurance/atlanta/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Atlanta</a>
-                <a href="/insurance/st-louis/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">St. Louis</a>
-                <a href="/insurance/denver/index.html" style="display: inline-block; color: var(--accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; padding: 8px 16px; border: 1px solid var(--border); border-radius: 8px; transition: all 0.18s ease;">Denver</a>
-            </div>
-            <p style="color: var(--text-secondary); font-size: 0.85rem;">Available across: <a href="/insurance/index.html" style="color: var(--accent); text-decoration: none;">Insurance</a> · <a href="/legal/index.html" style="color: var(--accent); text-decoration: none;">Legal</a> · <a href="/taxes/index.html" style="color: var(--accent); text-decoration: none;">Taxes</a> · <a href="/real-estate/index.html" style="color: var(--accent); text-decoration: none;">Real Estate</a> · <a href="/cars/index.html" style="color: var(--accent); text-decoration: none;">Cars</a> · <a href="/wedding/index.html" style="color: var(--accent); text-decoration: none;">Wedding</a> · <a href="/cybersecurity/index.html" style="color: var(--accent); text-decoration: none;">Cybersecurity</a></p>
-        </div>
-    </section>
+  <!-- Disclaimer -->
+  <div class="disclaimer">
+    <div class="container">
+      <p>Advertiser Disclosure: SmartPath Guides may earn commissions when you click on product links. This never affects our editorial ratings or recommendations. All reviews are independent and based on our own research and analysis.</p>
+    </div>
+  </div>
 
-    <div class="ad-slot">Advertisement</div>
+</main>
 
-    <footer>
-        <div class="container">
-            <p style="margin-bottom: 12px;"><a href="/" class="logo" style="font-size: 1.2rem;">Smart<span style="color: var(--accent);">Path</span> Guides</a></p>
-            <p>&copy; 2026 SmartPath Guides. All rights reserved. For informational purposes only.</p>
-            <p style="margin-top: 8px;">
-                <a href="/about/">About</a> · 
-                <a href="/contact/">Contact</a> · 
-                <a href="/privacy/">Privacy Policy</a> · 
-                <a href="/terms/">Terms of Service</a>
-            </p>
-            <p style="margin-top: 8px;">
-                <a href="/insurance/index.html">Insurance</a> · 
-                <a href="/finance/index.html">Finance</a> · 
-                <a href="/legal/index.html">Legal</a> · 
-                <a href="/credit-cards/index.html">Credit Cards</a> · 
-                <a href="/taxes/index.html">Taxes</a> · 
-                <a href="/real-estate/index.html">Real Estate</a> · 
-                <a href="/crypto/index.html">Crypto</a> · 
-                <a href="/fitness/index.html">Fitness</a> · 
-                <a href="/senior-health/index.html">Senior Health</a> · 
-                <a href="/pets/index.html">Pets</a> · 
-                <a href="/wedding/index.html">Wedding</a> · 
-                <a href="/ai-tools/index.html">AI Tools</a> · 
-                <a href="/cybersecurity/index.html">Cybersecurity</a> · 
-                <a href="/remote-work/index.html">Remote Work</a> · 
-                <a href="/home-improvement/index.html">Home</a> · 
-                <a href="/cars/index.html">Cars</a>
-            </p>
-        </div>
-    </footer></body>
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" style="color: #fff">SmartPath<span>Guides</span></a>
+        <p>Independent guides to help you make smarter financial decisions — without the jargon.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Credit Cards</h4>
+        <ul>
+          <li><a href="/credit-cards/best-cash-back/">Best Cash Back</a></li>
+          <li><a href="/credit-cards/best-travel-rewards/">Best Travel</a></li>
+          <li><a href="/credit-cards/best-balance-transfer/">Balance Transfer</a></li>
+          <li><a href="/credit-cards/best-business/">Best Business</a></li>
+          <li><a href="/credit-cards/best-for-building-credit/">Build Credit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/crypto/">Crypto Guides</a></li>
+          <li><a href="/finance/">Finance Guides</a></li>
+          <li><a href="/crypto/best-crypto-exchanges/">Crypto Exchanges</a></li>
+          <li><a href="/finance/best-savings-accounts/">Savings Accounts</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about/">About Us</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+          <li><a href="/advertiser-disclosure/">Advertiser Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 SmartPath Guides. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/advertiser-disclosure/">Disclosure</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+</body>
 </html>
