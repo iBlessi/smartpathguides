@@ -1,1 +1,1041 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="3fIBnGFp41p0yFd5lxiWBIIBcPJmMEY2hJ5-LDW6Y0s">
+    <meta name="description" content="SmartPath Guides helps you make smarter financial decisions. Expert guides on credit cards, insurance, loans, mortgages, banking, and retirement planning.">
+    <meta name="keywords" content="personal finance, credit cards, insurance, loans, mortgages, savings accounts, retirement planning, financial guides">
+    <title>SmartPath Guides | Your Trusted Resource for Smarter Financial Decisions</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SmartPath Guides | Smarter Financial Decisions">
+    <meta property="og:description" content="Expert guides on credit cards, insurance, loans, mortgages, and retirement planning to help you build wealth.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartpathguides.com">
+    <link rel="canonical" href="https://smartpathguides.com/">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYXNDGSQ21"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KYXNDGSQ21');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6839920118629761" crossorigin="anonymous"></script>
+    
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "SmartPath Guides",
+        "url": "https://smartpathguides.com",
+        "logo": "https://smartpathguides.com/logo.png",
+        "description": "Your trusted resource for smarter financial decisions",
+        "sameAs": []
+    }
+    </script>
+    
+    <!-- Structured Data - WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "SmartPath Guides",
+        "url": "https://smartpathguides.com",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://smartpathguides.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data - ItemList for categories -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Credit Cards", "url": "https://smartpathguides.com/credit-cards"},
+            {"@type": "ListItem", "position": 2, "name": "Insurance", "url": "https://smartpathguides.com/insurance"},
+            {"@type": "ListItem", "position": 3, "name": "Loans", "url": "https://smartpathguides.com/loans"},
+            {"@type": "ListItem", "position": 4, "name": "Mortgages", "url": "https://smartpathguides.com/mortgages"},
+            {"@type": "ListItem", "position": 5, "name": "Banking", "url": "https://smartpathguides.com/banking"},
+            {"@type": "ListItem", "position": 6, "name": "Retirement", "url": "https://smartpathguides.com/retirement"},
+            {"@type": "ListItem", "position": 7, "name": "Finance Guides", "url": "https://smartpathguides.com/finance"}
+        ]
+    }
+    </script>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #1e293b;
+            --accent: #f59e0b;
+            --accent-hover: #d97706;
+            --text: #334155;
+            --text-light: #64748b;
+            --bg: #fafaf9;
+            --card-bg: #ffffff;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --gradient-1: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f172a 100%);
+            --gradient-accent: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        
+        .logo {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-accent);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 1.1rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+        }
+        
+        .nav-links a:hover {
+            color: white;
+            background: rgba(255,255,255,0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(245, 158, 11, 0.15);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: #fbbf24;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .hero-badge::before {
+            content: '✦';
+            font-size: 0.7rem;
+        }
+        
+        .hero h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            color: white;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 800px;
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+        
+        .hero h1 span {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 600px;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 32px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: var(--primary);
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(245, 158, 11, 0.5);
+        }
+        
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.15);
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            animation: fadeInUp 0.6s ease-out 0.4s both;
+        }
+        
+        .stat {
+            text-align: left;
+        }
+        
+        .stat-number {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.5rem;
+            color: white;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 100px 24px;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-label {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Category Grid */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+        }
+        
+        .category-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 32px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: transparent;
+        }
+        
+        .category-card:hover::before {
+            opacity: 1;
+        }
+        
+        .category-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .category-card.credit-cards .category-icon { background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%); }
+        .category-card.insurance .category-icon { background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%); }
+        .category-card.loans .category-icon { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
+        .category-card.mortgages .category-icon { background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%); }
+        .category-card.banking .category-icon { background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%); }
+        .category-card.retirement .category-icon { background: linear-gradient(135deg, #ccfbf1 0%, #99f6e4 100%); }
+        .category-card.finance .category-icon { background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); }
+        
+        .category-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+        
+        .category-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+        
+        .category-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .category-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: var(--bg);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+        
+        .category-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(4px);
+        }
+        
+        .category-link::after {
+            content: '→';
+            opacity: 0.5;
+            transition: all 0.2s ease;
+        }
+        
+        .category-link:hover::after {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+        
+        /* Featured Section */
+        .featured {
+            background: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .featured::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 50%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .featured .section-label {
+            color: var(--accent);
+        }
+        
+        .featured .section-title {
+            color: white;
+        }
+        
+        .featured .section-subtitle {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .featured-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+        
+        .featured-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+        }
+        
+        .featured-card-title {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .featured-card-desc {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .featured-card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap 0.2s ease;
+        }
+        
+        .featured-card-link:hover {
+            gap: 12px;
+        }
+        
+        /* Trust Section */
+        .trust {
+            background: linear-gradient(180deg, var(--bg) 0%, #f1f5f9 100%);
+        }
+        
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+        }
+        
+        .trust-item {
+            text-align: center;
+            padding: 32px 24px;
+        }
+        
+        .trust-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-accent);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            margin: 0 auto 20px;
+        }
+        
+        .trust-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .trust-desc {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 80px 24px 40px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(3, 1fr);
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-brand p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+        
+        .footer-col h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.9);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-col a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+        
+        .footer-legal {
+            display: flex;
+            gap: 24px;
+        }
+        
+        .footer-legal a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        
+        .footer-legal a:hover {
+            color: var(--accent);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 32px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <div class="logo-icon">S</div>
+                SmartPath Guides
+            </a>
+            <ul class="nav-links">
+                <li><a href="#credit-cards">Credit Cards</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#loans">Loans</a></li>
+                <li><a href="#banking">Banking</a></li>
+                <li><a href="#guides">Guides</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-grid"></div>
+        <div class="hero-content">
+            <div class="hero-badge">Updated for 2026</div>
+            <h1>Make <span>Smarter</span> Financial Decisions</h1>
+            <p class="hero-subtitle">Expert-researched guides to help you find the best credit cards, insurance, loans, and banking products for your unique situation.</p>
+            <div class="hero-cta">
+                <a href="#categories" class="btn btn-primary">Explore Guides</a>
+                <a href="#featured" class="btn btn-secondary">Popular Topics</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">In-Depth Guides</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Products Compared</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">2026</div>
+                    <div class="stat-label">Updated Research</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="categories">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Browse by Category</div>
+                <h2 class="section-title">Find What You Need</h2>
+                <p class="section-subtitle">Whether you're looking to save money, build credit, or protect your assets, we've got you covered.</p>
+            </div>
+            
+            <div class="category-grid">
+                <!-- Credit Cards -->
+                <div class="category-card credit-cards animate-on-scroll" id="credit-cards">
+                    <div class="category-icon">💳</div>
+                    <h3 class="category-title">Credit Cards</h3>
+                    <p class="category-desc">Find the perfect credit card for rewards, cash back, travel, or building credit.</p>
+                    <div class="category-links">
+                        <a href="/credit-cards/best-travel-credit-cards-2026/" class="category-link">Best Travel Credit Cards 2026</a>
+                        <a href="/credit-cards/best-cash-back-credit-cards-2026/" class="category-link">Best Cash Back Credit Cards 2026</a>
+                        <a href="/credit-cards/best-balance-transfer-cards-2026/" class="category-link">Best Balance Transfer Cards 2026</a>
+                        <a href="/credit-cards/best-credit-cards-bad-credit-2026/" class="category-link">Best Cards for Bad Credit 2026</a>
+                    </div>
+                </div>
+                
+                <!-- Insurance -->
+                <div class="category-card insurance animate-on-scroll" id="insurance">
+                    <div class="category-icon">🛡️</div>
+                    <h3 class="category-title">Insurance</h3>
+                    <p class="category-desc">Protect what matters most with the right life, auto, and home insurance coverage.</p>
+                    <div class="category-links">
+                        <a href="/insurance/best-life-insurance-2026/" class="category-link">Best Life Insurance 2026</a>
+                        <a href="/insurance/best-auto-insurance-2026/" class="category-link">Best Auto Insurance 2026</a>
+                        <a href="/insurance/best-homeowners-insurance-2026/" class="category-link">Best Homeowners Insurance 2026</a>
+                    </div>
+                </div>
+                
+                <!-- Loans -->
+                <div class="category-card loans animate-on-scroll" id="loans">
+                    <div class="category-icon">💰</div>
+                    <h3 class="category-title">Loans</h3>
+                    <p class="category-desc">Compare personal loan rates and find the best lenders for your borrowing needs.</p>
+                    <div class="category-links">
+                        <a href="/loans/best-personal-loans-2026/" class="category-link">Best Personal Loans 2026</a>
+                    </div>
+                </div>
+                
+                <!-- Mortgages -->
+                <div class="category-card mortgages animate-on-scroll" id="mortgages">
+                    <div class="category-icon">🏠</div>
+                    <h3 class="category-title">Mortgages</h3>
+                    <p class="category-desc">Navigate the home buying process with our comprehensive mortgage guides.</p>
+                    <div class="category-links">
+                        <a href="/mortgages/best-mortgage-lenders-2026/" class="category-link">Best Mortgage Lenders 2026</a>
+                    </div>
+                </div>
+                
+                <!-- Banking -->
+                <div class="category-card banking animate-on-scroll" id="banking">
+                    <div class="category-icon">🏦</div>
+                    <h3 class="category-title">Banking</h3>
+                    <p class="category-desc">Maximize your savings with the highest-yielding accounts available today.</p>
+                    <div class="category-links">
+                        <a href="/banking/best-high-yield-savings-accounts-2026/" class="category-link">Best High-Yield Savings 2026</a>
+                    </div>
+                </div>
+                
+                <!-- Retirement -->
+                <div class="category-card retirement animate-on-scroll" id="retirement">
+                    <div class="category-icon">📈</div>
+                    <h3 class="category-title">Retirement</h3>
+                    <p class="category-desc">Plan for your future with our retirement savings and investment guides.</p>
+                    <div class="category-links">
+                        <a href="/retirement/roth-ira-vs-traditional-ira/" class="category-link">Roth IRA vs Traditional IRA</a>
+                    </div>
+                </div>
+                
+                <!-- Finance Guides -->
+                <div class="category-card finance animate-on-scroll" id="guides">
+                    <div class="category-icon">📚</div>
+                    <h3 class="category-title">Finance Guides</h3>
+                    <p class="category-desc">Build a strong financial foundation with our step-by-step money guides.</p>
+                    <div class="category-links">
+                        <a href="/finance/how-to-improve-credit-score/" class="category-link">How to Improve Your Credit Score</a>
+                        <a href="/finance/how-to-get-out-of-debt/" class="category-link">How to Get Out of Debt</a>
+                        <a href="/finance/how-to-budget-step-by-step/" class="category-link">How to Budget: Step-by-Step Guide</a>
+                        <a href="/finance/emergency-fund-guide/" class="category-link">Emergency Fund Guide</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Featured Section -->
+    <section class="featured" id="featured">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Most Popular</div>
+                <h2 class="section-title">Trending Guides</h2>
+                <p class="section-subtitle">The resources our readers find most valuable right now.</p>
+            </div>
+            
+            <div class="featured-grid">
+                <div class="featured-card animate-on-scroll">
+                    <h4 class="featured-card-title">Best Travel Credit Cards 2026</h4>
+                    <p class="featured-card-desc">Earn points on every purchase and travel for free with the right rewards card.</p>
+                    <a href="/credit-cards/best-travel-credit-cards-2026/" class="featured-card-link">Read Guide →</a>
+                </div>
+                <div class="featured-card animate-on-scroll">
+                    <h4 class="featured-card-title">How to Improve Your Credit Score</h4>
+                    <p class="featured-card-desc">Actionable strategies to boost your score by 100+ points in months.</p>
+                    <a href="/finance/how-to-improve-credit-score/" class="featured-card-link">Read Guide →</a>
+                </div>
+                <div class="featured-card animate-on-scroll">
+                    <h4 class="featured-card-title">Best High-Yield Savings 2026</h4>
+                    <p class="featured-card-desc">Earn 5%+ APY on your savings with these top online banks.</p>
+                    <a href="/banking/best-high-yield-savings-accounts-2026/" class="featured-card-link">Read Guide →</a>
+                </div>
+                <div class="featured-card animate-on-scroll">
+                    <h4 class="featured-card-title">Emergency Fund Guide</h4>
+                    <p class="featured-card-desc">How much you really need and the fastest way to build it.</p>
+                    <a href="/finance/emergency-fund-guide/" class="featured-card-link">Read Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Trust Section -->
+    <section class="trust">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Why SmartPath</div>
+                <h2 class="section-title">Guides You Can Trust</h2>
+                <p class="section-subtitle">We do the research so you can make confident financial decisions.</p>
+            </div>
+            
+            <div class="trust-grid">
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-icon">🔍</div>
+                    <h4 class="trust-title">Thoroughly Researched</h4>
+                    <p class="trust-desc">Every guide is based on extensive product analysis and real user experiences.</p>
+                </div>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-icon">🔄</div>
+                    <h4 class="trust-title">Regularly Updated</h4>
+                    <p class="trust-desc">Our content is reviewed and updated to reflect the latest rates and offers.</p>
+                </div>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-icon">⚖️</div>
+                    <h4 class="trust-title">Unbiased Comparisons</h4>
+                    <p class="trust-desc">We present the facts so you can choose what's best for your situation.</p>
+                </div>
+                <div class="trust-item animate-on-scroll">
+                    <div class="trust-icon">🎯</div>
+                    <h4 class="trust-title">Actionable Advice</h4>
+                    <p class="trust-desc">Clear, practical steps you can take to improve your financial life today.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="/" class="logo">
+                        <div class="logo-icon">S</div>
+                        SmartPath Guides
+                    </a>
+                    <p>Helping you navigate your financial journey with confidence and clarity.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Credit Cards</h4>
+                    <ul>
+                        <li><a href="/credit-cards/best-travel-credit-cards-2026/">Travel Cards</a></li>
+                        <li><a href="/credit-cards/best-cash-back-credit-cards-2026/">Cash Back Cards</a></li>
+                        <li><a href="/credit-cards/best-balance-transfer-cards-2026/">Balance Transfer</a></li>
+                        <li><a href="/credit-cards/best-credit-cards-bad-credit-2026/">Cards for Bad Credit</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Insurance</h4>
+                    <ul>
+                        <li><a href="/insurance/best-life-insurance-2026/">Life Insurance</a></li>
+                        <li><a href="/insurance/best-auto-insurance-2026/">Auto Insurance</a></li>
+                        <li><a href="/insurance/best-homeowners-insurance-2026/">Homeowners Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Money Guides</h4>
+                    <ul>
+                        <li><a href="/finance/how-to-improve-credit-score/">Improve Credit Score</a></li>
+                        <li><a href="/finance/how-to-get-out-of-debt/">Get Out of Debt</a></li>
+                        <li><a href="/finance/how-to-budget-step-by-step/">Budgeting 101</a></li>
+                        <li><a href="/finance/emergency-fund-guide/">Emergency Fund</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 SmartPath Guides. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="/about/">About</a>
+                    <a href="/privacy/">Privacy Policy</a>
+                    <a href="/terms/">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Scroll Animation Script -->
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
